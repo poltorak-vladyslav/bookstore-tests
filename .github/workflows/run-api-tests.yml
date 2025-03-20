@@ -56,3 +56,9 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages
           publish_dir: allure-history
+
+      - name: Add Report Link to Job Summary
+        if: always()
+        run: |
+          REPORT_URL="https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/"
+          echo "### 🔗 Allure Report: [View Report]($REPORT_URL)" >> $GITHUB_STEP_SUMMARY
