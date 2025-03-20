@@ -1,0 +1,39 @@
+plugins {
+    id 'java'
+    id 'io.freefair.lombok' version '8.6'
+    id 'io.qameta.allure' version '2.11.2'
+}
+
+group = 'com.bookstore'
+version = '1.0'
+
+repositories {
+    mavenCentral()
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_21
+    targetCompatibility = JavaVersion.VERSION_21
+}
+
+dependencies {
+    implementation 'io.rest-assured:rest-assured:5.5.1'
+    implementation 'io.qameta.allure:allure-rest-assured:2.29.1'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.16.0'
+    implementation 'org.aeonbits.owner:owner:1.0.12'
+    implementation 'org.assertj:assertj-core:3.27.3'
+
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.12.1'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+test {
+    useJUnitPlatform()
+
+    def threads = System.getProperty("threads", "1").toInteger()
+
+    systemProperty "junit.jupiter.execution.parallel.enabled", "true"
+    systemProperty "junit.jupiter.execution.parallel.mode.default", "concurrent"
+    systemProperty "junit.jupiter.execution.parallel.config.strategy", "fixed"
+    systemProperty "junit.jupiter.execution.parallel.config.fixed.parallelism", threads
+}
