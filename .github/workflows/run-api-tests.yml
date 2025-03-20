@@ -31,7 +31,7 @@ jobs:
         run: chmod +x gradlew
 
       - name: Run API Tests
-        run: ./gradlew clean test -Dthreads=4
+        run: ./gradlew clean test -Denv=dev -Dthreads=4
 
       - name: Load test report history
         uses: actions/checkout@v4
@@ -60,5 +60,5 @@ jobs:
       - name: Add Report Link to Job Summary
         if: always()
         run: |
-          REPORT_URL="https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/"
+          REPORT_URL="https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/${{github.run_number}}/"
           echo "### 🔗 Allure Report: [View Report]($REPORT_URL)" >> $GITHUB_STEP_SUMMARY
