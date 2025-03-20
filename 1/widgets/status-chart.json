@@ -1,0 +1,1 @@
+[{"uid":"ae282c45080f2b80","name":"Fetch a list of authors","time":{"start":1742485280284,"stop":1742485286377,"duration":6093},"status":"passed","severity":"normal"},{"uid":"eeeeb6910fdb9743","name":"Fetch author by id","time":{"start":1742485280284,"stop":1742485285988,"duration":5704},"status":"passed","severity":"normal"}]
