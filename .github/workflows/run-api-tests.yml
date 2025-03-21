@@ -4,6 +4,21 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch:
+    inputs:
+      env:
+        description: "Environment (e.g., dev, qa)"
+        required: true
+        default: "dev"
+        type: choice
+        options:
+          - dev
+          - qa
+      threads:
+        description: "Number of threads to run tests"
+        required: true
+        default: "4"
+        type: string
 
 jobs:
   test:
@@ -31,7 +46,7 @@ jobs:
         run: chmod +x gradlew
 
       - name: Run API Tests
-        run: ./gradlew clean test -Denv=dev -Dthreads=4
+        run: ./gradlew clean test -Denv=${{ github.event.inputs.env || 'dev' }} -Dthreads=${{ github.event.inputs.threads || '4' }}
 
       - name: Load test report history
         uses: actions/checkout@v4
