@@ -1,0 +1,35 @@
+<div>POST to https://fakerestapi.azurewebsites.net/api/v1/Books</div>
+
+    <h4>Body</h4>
+    <div>
+    <pre class="preformated-text">
+{
+    &quot;id&quot;: 203,
+    &quot;title&quot;: &quot;The Doors of Perception&quot;,
+    &quot;description&quot;: &quot;Short story&quot;,
+    &quot;pageCount&quot;: 680,
+    &quot;excerpt&quot;: &quot;Repellat distinctio error voluptatum non iure corporis similique. Placeat impedit laboriosam delectus nisi minus. Magnam ipsum soluta laborum quaerat omnis ea. Non quam consequatur.&quot;,
+    &quot;publishDate&quot;: &quot;2025-03-21T09:17:37.237Z&quot;
+}    </pre>
+    </div>
+
+    <h4>Headers</h4>
+    <div>
+            <div>Accept: application/json, application/javascript, text/javascript, text/json</div>
+            <div>Content-Type: application/json</div>
+    </div>
+
+
+
+    <h4>Curl</h4>
+    <div>
+        curl -v -X POST &#39;https://fakerestapi.azurewebsites.net/api/v1/Books&#39; -H &#39;Accept: application/json, application/javascript, text/javascript, text/json&#39; -H &#39;Content-Type: application/json&#39; -d &#39;{
+    &quot;id&quot;: 203,
+    &quot;title&quot;: &quot;The Doors of Perception&quot;,
+    &quot;description&quot;: &quot;Short story&quot;,
+    &quot;pageCount&quot;: 680,
+    &quot;excerpt&quot;: &quot;Repellat distinctio error voluptatum non iure corporis similique. Placeat impedit laboriosam delectus nisi minus. Magnam ipsum soluta laborum quaerat omnis ea. Non quam consequatur.&quot;,
+    &quot;publishDate&quot;: &quot;2025-03-21T09:17:37.237Z&quot;
+}&#39;
+    </div>
+
