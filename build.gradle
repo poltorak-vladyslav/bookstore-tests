@@ -17,14 +17,15 @@ java {
 }
 
 dependencies {
-    implementation 'io.rest-assured:rest-assured:5.5.1'
-    implementation 'io.qameta.allure:allure-rest-assured:2.29.1'
-    implementation 'com.fasterxml.jackson.core:jackson-databind:2.16.0'
-    implementation 'org.aeonbits.owner:owner:1.0.12'
-    implementation 'org.assertj:assertj-core:3.27.3'
+    implementation "io.rest-assured:rest-assured:${restAssuredVersion}"
+    implementation "io.qameta.allure:allure-rest-assured:${allureRestAssuredVersion}"
+    implementation "com.fasterxml.jackson.core:jackson-databind:${jacksonVersion}"
+    implementation "org.aeonbits.owner:owner:${ownerVersion}"
+    implementation "org.assertj:assertj-core:${assertjVersion}"
+    implementation "com.github.javafaker:javafaker:${javaFakerVersion}"
 
-    testImplementation 'org.junit.jupiter:junit-jupiter:5.12.1'
-    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+    testImplementation "org.junit.jupiter:junit-jupiter:${junitJupiterVersion}"
+    testRuntimeOnly "org.junit.platform:junit-platform-launcher"
 }
 
 test {
